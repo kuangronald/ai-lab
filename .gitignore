@@ -1,0 +1,32 @@
+# NEVER UPLOAD THESE
+.env
+*.env
+.env.*
+**/.env
+
+# Credentials
+*token*
+*secret*
+*password*
+*key*.asc
+*.gpg
+*.pem
+*.crt
+
+# Logs
+*.log
+logs/
+
+# Backups
+backups/
+*.bak
+*.backup
+
+# Personal configs with IPs
+ai-api/
+lab-configs/.ai-audit.log
+
+# OS files
+.DS_Store
+Thumbs.db
+*~
