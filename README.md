@@ -50,6 +50,7 @@ This AI Lab provides **4 levels of AI assistance** for managing self-hosted infr
 
 ## 🏗️ Architecture
 
+```mermaid
 flowchart TB
     A[Desktop]
     B[Proxmox]
