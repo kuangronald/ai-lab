@@ -210,7 +210,9 @@ MAIN AILAB COMMANDS:
 ## 🔄 Common Workflows
 
 ### Start your day
+
 ailab health
+
 ailab proxmox status
 
 ### Edit a config safely
@@ -223,7 +225,9 @@ ailab backup
 ailab monitor
 
 ### Remote access (from laptop via Tailscale)
+
 ssh user@TailscaleIP
+
 ailab health
 
 ---
