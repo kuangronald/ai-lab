@@ -151,10 +151,10 @@ nano ~/ai-api/.env
 
 ##Basic Commands
 
-ailab health              # Check system health
-ailab chat                # Open chat interface
-ailab proxmox status      # List Proxmox VMs
-ailab backup              # View backup status
+|ailab|health|# Check system health|
+|ailab|chat|# Open chat interface|
+|ailab|proxmox status|# List Proxmox VMs|
+|ailab|backup|# View backup status|
 
 ---
 
