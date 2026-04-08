@@ -154,7 +154,7 @@ nano ~/ai-api/.env
 ```
 ---
 
-##Basic Commands
+## 🔧 Basic Commands
 
 | Command | Purpose |
 |---------|---------|
@@ -165,7 +165,7 @@ nano ~/ai-api/.env
 
 ---
 
-##COMMAND REFERENCE
+## 📚 Command Reference
 
 MAIN AILAB COMMANDS:
 | Command | Purpose |
@@ -195,7 +195,7 @@ MAIN AILAB COMMANDS:
 
 ---
 
-##QUICK DIAGNOSTICS:
+## 🔍 Quick Diagnostics
 
 | Command | Purpose |
 |---------|---------|
@@ -207,7 +207,7 @@ MAIN AILAB COMMANDS:
 
 ---
 
-##COMMON WORKFLOWS:
+## 🔄 Common Workflows
 
 # Start your day
 ailab health
@@ -227,7 +227,7 @@ ssh user@TailscaleIP
 ailab health
 ---
 
-##📄 License
+## 📄 License
 Personal Use Only — This is my personal infrastructure automation setup. Feel free to use ideas and patterns for your own projects.
 <div align="center">
 
