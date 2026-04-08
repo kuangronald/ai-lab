@@ -1,7 +1,7 @@
 #!/bin/bash
-# ~/bin/ailab-proxmox.sh - FINAL VERSION (No $(hostname))
+# ~/bin/ailab-proxmox.sh - Proxmox API Helper
 
-# Hardcoded values
+# Hardcoded values (users replace UUID only)
 PROXMOX_HOST="10.10.10.2"
 PROXMOX_NODE="promox"
 PROXMOX_USER="root@pam"
@@ -17,8 +17,8 @@ call() {
 case "$1" in
     health)
         resp=$(call "${API}/version")
-        if echo "$resp" | grep -q version; then
-            ver=$(echo "$resp" | sed 's/.*"version":"\([^"]*\)".*/\1/')
+        if echo "$resp" | grep -q '"version"'; then
+            ver=$(echo "$resp" | sed -n 's/.*"version":"\([^"]*\)".*/\1/p')
             echo "✅ Connected (Proxmox $ver)"
         else
             echo "❌ Failed - Response: '$resp'"
@@ -27,8 +27,9 @@ case "$1" in
     status)
         echo "📊 VM Status:"
         resp=$(call "${API}/nodes/${PROXMOX_NODE}/qemu")
-        if echo "$resp" | grep -q vmid; then
-            echo "$resp" | tr ',' '\n' | grep -E '"vmid"|"name"|"status"' | sed 's/.*://; s/"//g; s/ //g' | paste - - - | sed 's/^/  /'
+        if echo "$resp" | grep -q '"vmid"'; then
+            echo "$resp" | tr ',' '\n' | grep -E '"vmid"|"name"|"status"' | \
+                sed 's/.*"//; s/".*//' | paste - - - | sed 's/^/  /'
         else
             echo "  (no VMs or permission denied)"
             echo "  Debug: '$resp'"
@@ -42,8 +43,15 @@ case "$1" in
         call "${API}/nodes/${PROXMOX_NODE}/qemu/$2/status/stop" >/dev/null
         echo "✅ Stopping VM $2"
         ;;
+    debug)
+        echo "=== Debug ==="
+        echo "Host: $PROXMOX_HOST"
+        echo "Node: $PROXMOX_NODE"
+        echo "Auth: $AUTH_HEADER"
+        echo "Version: $(call "${API}/version")"
+        ;;
     *)
         echo "🔧 Proxmox Helper"
-        echo "Usage: ailab-proxmox.sh {health|status|start|stop} [vmid]"
+        echo "Usage: ailab-proxmox.sh {health|status|start|stop|debug} [vmid]"
         ;;
 esac

@@ -30,3 +30,7 @@ lab-configs/.ai-audit.log
 .DS_Store
 Thumbs.db
 *~
+# ... existing rules ...
+
+# Allow the example template (but block real .env files)
+!examples/.env.example
