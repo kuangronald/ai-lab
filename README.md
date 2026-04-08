@@ -63,7 +63,7 @@ flowchart TB
 
 ---
 
-### Core Services
+## Core Services
 
 | Service | Port | Purpose |
 |---------|------|---------|
