@@ -209,22 +209,23 @@ MAIN AILAB COMMANDS:
 
 ## 🔄 Common Workflows
 
-#### Start your day
+### Start your day
 ailab health
 ailab proxmox status
 
-#### Edit a config safely
+### Edit a config safely
 ailab edit ~/lab-configs/somefile.conf
 
-#### Check backups
+### Check backups
 ailab backup
 
-#### Monitor GPU during AI work
+### Monitor GPU during AI work
 ailab monitor
 
-#### Remote access (from laptop via Tailscale)
+### Remote access (from laptop via Tailscale)
 ssh user@TailscaleIP
 ailab health
+
 ---
 
 ## 📄 License
