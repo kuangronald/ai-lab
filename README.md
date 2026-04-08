@@ -51,9 +51,6 @@ This AI Lab provides **4 levels of AI assistance** for managing self-hosted infr
 ## 🏗️ Architecture
 
 ```mermaid
-## 🏗️ Architecture
-
-```mermaid
 flowchart TB
     subgraph LAN["Home LAN (10.10.10.0/24)"]
         subgraph AI_HOST["Desktop (AI Host)"]
