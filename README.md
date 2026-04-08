@@ -49,7 +49,7 @@ This AI Lab provides **4 levels of AI assistance** for managing self-hosted infr
 ---
 
 ## 🏗️ Architecture
-```mermaid
+
 flowchart TB
     subgraph AI_LAB["AI Lab Stack"]
         Desktop["Desktop (AI Host)<br/>• Ollama<br/>• WebUI<br/>• API"]
@@ -57,11 +57,14 @@ flowchart TB
         OPNsense["OPNsense (Firewall)<br/>• Firewall<br/>• DHCP<br/>• Routing"]
     end
     
-    Tailscale["Tailscale (Remote Access)"]
+    Tailscale["Tailscale<br/>(Remote Access)"]
     
-    Desktop --- Tailscale
-    Proxmox --- Tailscale
-    OPNsense --- Tailscale
+    Desktop --> Tailscale
+    Proxmox --> Tailscale
+    OPNsense --> Tailscale
+
+---
+
 ### Core Services
 
 | Service | Port | Purpose |
