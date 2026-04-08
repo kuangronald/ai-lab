@@ -51,15 +51,55 @@ This AI Lab provides **4 levels of AI assistance** for managing self-hosted infr
 ## 🏗️ Architecture
 
 ```mermaid
+## 🏗️ Architecture
+
+```mermaid
 flowchart TB
-    A[Desktop]
-    B[Proxmox]
-    C[OPNsense]
-    D[Tailscale]
+    subgraph LAN["Home LAN (10.10.10.0/24)"]
+        subgraph AI_HOST["Desktop (AI Host)"]
+            A1[Ollama<br/>qwen2.5:14b]
+            A2[Open WebUI<br/>Port 3000]
+            A3[AI Actions API<br/>Port 8888]
+            A4[ailab CLI<br/>Fish Shell]
+        end
+        
+        subgraph VM_HOST["Proxmox (10.10.10.2)"]
+            B1[Jellyfin VM]
+            B2[OPNsense VM]
+            B3[Backup LXC]
+        end
+        
+        subgraph FIREWALL["OPNsense (10.10.10.1)"]
+            C1[Firewall Rules]
+            C2[DHCP Server]
+            C3[Traffic Logging]
+        end
+    end
     
-    A --> D
-    B --> D
-    C --> D
+    subgraph REMOTE["Remote Access"]
+        D1[Tailscale<br/>Encrypted Tunnel]
+    end
+    
+    subgraph SERVICES["Core Services"]
+        E1[Docker]
+        E2[systemd]
+        E3[GPG Encryption]
+    end
+    
+    %% Connections
+    A1 & A2 & A3 & A4 --> D1
+    B1 & B2 & B3 --> D1
+    C1 & C2 & C3 --> D1
+    
+    A3 -.->|API Calls| B1
+    A4 -.->|Proxmox API| B2
+    
+    style LAN fill:#e3f2fd,stroke:#1976d2
+    style AI_HOST fill:#e8f5e9,stroke:#388e3c
+    style VM_HOST fill:#fff3e0,stroke:#f57c00
+    style FIREWALL fill:#ffebee,stroke:#d32f2f
+    style REMOTE fill:#f3e5f5,stroke:#7b1fa2
+    style SERVICES fill:#e0f7fa,stroke:#00838f
 ```
 ---
 
