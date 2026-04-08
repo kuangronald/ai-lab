@@ -147,16 +147,18 @@ nano ~/ai-api/.env
 # 6. Install dependencies
 ./setup.sh
 ```
-Basic Commands
+---
+
+##Basic Commands
 
 ailab health              # Check system health
 ailab chat                # Open chat interface
 ailab proxmox status      # List Proxmox VMs
 ailab backup              # View backup status
 
-================================================================================
-COMMAND REFERENCE
-================================================================================
+---
+
+##COMMAND REFERENCE
 
 MAIN AILAB COMMANDS:
 
@@ -174,18 +176,18 @@ ailab proxmox status    → List all Proxmox VMs
 ailab proxmox start ID  → Start a VM (e.g., ailab proxmox start 102)
 ailab proxmox stop ID   → Stop a VM (e.g., ailab proxmox stop 102)
 
---------------------------------------------------------------------------------
+---
 
-DIRECT SCRIPT ACCESS:
+##DIRECT SCRIPT ACCESS:
 
 ~/bin/ailab-proxmox.sh        → Proxmox API helper
 ~/bin/ai-lab-healthcheck.sh   → Health monitoring
 ~/bin/ai-lab-backup.sh        → Backup automation
 ~/bin/ai-lab-alert.sh         → Telegram alerts
 
---------------------------------------------------------------------------------
+---
 
-QUICK DIAGNOSTICS:
+##QUICK DIAGNOSTICS:
 
 ailab health                  → Check all services at once
 tail -20 ~/logs/*.log         → View recent logs
@@ -193,9 +195,9 @@ systemctl status ollama       → Check Ollama service
 systemctl status docker       → Check Docker service
 ~/bin/ailab-proxmox.sh debug  → Debug Proxmox connection
 
---------------------------------------------------------------------------------
+---
 
-COMMON WORKFLOWS:
+##COMMON WORKFLOWS:
 
 # Start your day
 ailab health
@@ -213,10 +215,13 @@ ailab monitor
 # Remote access (from laptop via Tailscale)
 ssh user@TailscaleIP
 ailab health
+---
 
-📄 License
+##📄 License
 Personal Use Only — This is my personal infrastructure automation setup. Feel free to use ideas and patterns for your own projects.
 <div align="center">
+
+---
 
 Made with ❤️ for the self-hosted community
 ⭐ Star this repo if you found it useful!
