@@ -5,7 +5,6 @@
 [![Stars](https://img.shields.io/github/stars/kuangronald/ai-lab)](https://github.com/kuangronald/ai-lab)
 
 > A private, offline, GPU-accelerated AI automation system with full infrastructure integration
-
 ---
 
 ## 📋 Table of Contents
@@ -13,12 +12,18 @@
 - [Overview](#-overview)
 - [Features](#-features)
 - [Architecture](#-architecture)
+- [Core Services](#-core-services)
 - [Quick Start](#-quick-start)
+- [Basic Commands](#-basic-commands)
 - [Command Reference](#-command-reference)
+- [Direct Script Access](#-direct-script-access)
+- [Quick Diagnostics](#-quick-diagnostics)
+- [Common Workflows](#-common-workflows)
 - [Configuration](#-configuration)
 - [Security](#-security)
 - [Backup & Recovery](#-backup--recovery)
 - [Troubleshooting](#-troubleshooting)
+- [License](#-license)
 
 ---
 
@@ -151,30 +156,33 @@ nano ~/ai-api/.env
 
 ##Basic Commands
 
-|ailab|health|# Check system health|
-|ailab|chat|# Open chat interface|
-|ailab|proxmox status|# List Proxmox VMs|
-|ailab|backup|# View backup status|
+| Command | Purpose |
+|---------|---------|
+|ailab health|# Check system health|
+|ailab chat|# Open chat interface|
+|ailab proxmox status|# List Proxmox VMs|
+|ailab backup|# View backup status|
 
 ---
 
 ##COMMAND REFERENCE
 
 MAIN AILAB COMMANDS:
-
-ailab chat              → Open WebUI chat interface
-ailab edit FILE         → Git-tracked config editing (Level 2)
-ailab sysedit FILE      → System file editing with backup (Level 3)
-ailab status            → Quick service status check
-ailab health            → Full health dashboard
-ailab backup            → Backup status
-ailab memory            → View/edit AI memory
-ailab remember 'fact'   → Add note to AI memory
-ailab monitor           → Live GPU stats
-ailab proxmox health    → Check Proxmox API connection
-ailab proxmox status    → List all Proxmox VMs
-ailab proxmox start ID  → Start a VM (e.g., ailab proxmox start 102)
-ailab proxmox stop ID   → Stop a VM (e.g., ailab proxmox stop 102)
+| Command | Purpose |
+|---------|---------|
+|ailab chat|Open WebUI chat interface|
+|ailab edit FILE|Git-tracked config editing (Level 2)|
+|ailab sysedit FILE|System file editing with backup (Level 3)|
+|ailab status|Quick service status check|
+|ailab health|Full health dashboard|
+|ailab backup|Backup status|
+|ailab memory|View/edit AI memory|
+|ailab remember 'fact'|Add note to AI memory|
+|ailab monitor|Live GPU stats|
+|ailab proxmox health|Check Proxmox API connection|
+|ailab proxmox status|List all Proxmox VMs|
+|ailab proxmox start ID|Start a VM (e.g., ailab proxmox start 102)|
+|ailab proxmox stop ID|Stop a VM (e.g., ailab proxmox stop 102)|
 
 ---
 
@@ -189,11 +197,13 @@ ailab proxmox stop ID   → Stop a VM (e.g., ailab proxmox stop 102)
 
 ##QUICK DIAGNOSTICS:
 
-ailab health                  → Check all services at once
-tail -20 ~/logs/*.log         → View recent logs
-systemctl status ollama       → Check Ollama service
-systemctl status docker       → Check Docker service
-~/bin/ailab-proxmox.sh debug  → Debug Proxmox connection
+| Command | Purpose |
+|---------|---------|
+|ailab health|Check all services at once|
+|tail -20 ~/logs/*.log|View recent logs|
+|systemctl status ollama|Check Ollama service|
+|systemctl status docker|Check Docker service|
+|~/bin/ailab-proxmox.sh debug|Debug Proxmox connection|
 
 ---
 
