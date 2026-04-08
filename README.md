@@ -51,10 +51,10 @@ This AI Lab provides **4 levels of AI assistance** for managing self-hosted infr
 ## 🏗️ Architecture
 
 flowchart TB
-    A["Desktop (AI Host)<br/>• Ollama<br/>• WebUI<br/>• API"]
-    B["Proxmox (VM Host)<br/>• VMs<br/>• Services<br/>• Backups"]
-    C["OPNsense (Firewall)<br/>• Firewall<br/>• DHCP<br/>• Routing"]
-    D["Tailscale<br/>(Remote Access)"]
+    A[Desktop]
+    B[Proxmox]
+    C[OPNsense]
+    D[Tailscale]
     
     A --> D
     B --> D
