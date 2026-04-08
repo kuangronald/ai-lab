@@ -146,8 +146,9 @@ nano ~/ai-api/.env
 
 # 6. Install dependencies
 ./setup.sh
-
+```
 Basic Commands
+
 ailab health              # Check system health
 ailab chat                # Open chat interface
 ailab proxmox status      # List Proxmox VMs
@@ -210,7 +211,7 @@ ailab backup
 ailab monitor
 
 # Remote access (from laptop via Tailscale)
-ssh luckyevent@100.119.79.65
+ssh user@TailscaleIP
 ailab health
 
 📄 License
@@ -220,4 +221,4 @@ Personal Use Only — This is my personal infrastructure automation setup. Feel 
 Made with ❤️ for the self-hosted community
 ⭐ Star this repo if you found it useful!
 </div>
-```
+
